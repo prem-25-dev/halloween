@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Halloween · Frat Party 2026</title>
+<meta name="description" content="31 October, 3 PM to 7 PM at Bay Minaret, ECR. Pool, games, DJ, snacks and shots. Passes from ₹999.">
+<meta name="theme-color" content="#07050b">
+<meta property="og:title" content="Halloween · Frat Party 2026">
+<meta property="og:description" content="31 October, 3 PM to 7 PM at Bay Minaret, ECR. Passes from ₹999.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Cinzel:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07050b; --bg2:#0f0a18; --ink:#efe6dc; --muted:#a79cb4;
+  --orange:#ff6a00; --amber:#ffb347; --purple:#8a3dff; --blood:#d00f2c;
+  --line:rgba(255,255,255,.12);
+  --display:'Creepster',system-ui,cursive; --serif:'Cinzel',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{width:min(1080px,100% - 32px);margin-inline:auto}
+section{position:relative;padding:96px 0}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,7vw,4.6rem);letter-spacing:.04em;color:var(--orange);text-shadow:0 0 24px rgba(255,106,0,.45);margin-bottom:10px}
+.eyebrow{font-family:var(--serif);letter-spacing:.35em;text-transform:uppercase;font-size:.78rem;color:var(--muted);margin-bottom:10px}
+.center{text-align:center}
+.lede{color:var(--muted);max-width:56ch;margin-bottom:44px}
+.center .lede{margin-inline:auto}
+
+/* ---------- atmosphere ---------- */
+#embers{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.flash{position:fixed;inset:0;background:#cdb8ff;opacity:0;pointer-events:none;z-index:50;mix-blend-mode:screen}
+.flash.on{animation:flash 1.1s ease-out}
+@keyframes flash{0%{opacity:0}6%{opacity:.5}12%{opacity:.05}20%{opacity:.38}100%{opacity:0}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;padding:96px 0 190px;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 18%,#2a1146 0%,#120a1f 45%,var(--bg) 78%)}
+.moon{position:absolute;top:7%;left:50%;width:clamp(140px,22vw,260px);aspect-ratio:1;translate:-50% 0;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#fff8e6,#f3dfb0 55%,#d9b97a);
+  box-shadow:0 0 80px 30px rgba(255,190,100,.28),0 0 220px 90px rgba(255,106,0,.18);animation:moonpulse 6s ease-in-out infinite}
+.moon::before,.moon::after{content:"";position:absolute;border-radius:50%;background:rgba(150,110,50,.22)}
+.moon::before{width:22%;height:22%;top:22%;left:55%}
+.moon::after{width:14%;height:14%;top:58%;left:30%}
+@keyframes moonpulse{50%{box-shadow:0 0 100px 40px rgba(255,190,100,.34),0 0 260px 110px rgba(255,106,0,.22)}}
+.hero-inner{position:relative;z-index:8;margin-top:clamp(150px,26vh,260px)}
+.tag{display:inline-block;font-family:var(--serif);letter-spacing:.4em;text-transform:uppercase;font-size:.78rem;color:var(--amber);
+  border:1px solid rgba(255,179,71,.4);padding:6px 16px;border-radius:99px;background:rgba(0,0,0,.35);margin-bottom:22px}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(3.6rem,16vw,10.5rem);line-height:.95;letter-spacing:.03em;color:var(--orange);
+  text-shadow:0 0 12px rgba(255,106,0,.7),0 0 48px rgba(255,60,0,.45);position:relative;display:inline-block;animation:flicker 7s infinite}
+h1::before,h1::after{content:attr(data-text);position:absolute;inset:0;pointer-events:none}
+h1::before{color:var(--purple);text-shadow:none;animation:glitch1 5s infinite steps(1);clip-path:inset(0 0 100% 0);mix-blend-mode:screen}
+h1::after{color:#00e5ff;text-shadow:none;animation:glitch2 5s infinite steps(1);clip-path:inset(0 0 100% 0);mix-blend-mode:screen}
+@keyframes flicker{0%,18%,22%,25%,53%,57%,100%{opacity:1}20%,24%,55%{opacity:.35}}
+@keyframes glitch1{0%,92%,100%{clip-path:inset(0 0 100% 0);translate:0}93%{clip-path:inset(18% 0 62% 0);translate:-6px}95%{clip-path:inset(60% 0 12% 0);translate:5px}97%{clip-path:inset(35% 0 40% 0);translate:-3px}}
+@keyframes glitch2{0%,92%,100%{clip-path:inset(0 0 100% 0);translate:0}94%{clip-path:inset(48% 0 30% 0);translate:6px}96%{clip-path:inset(8% 0 78% 0);translate:-5px}98%{clip-path:inset(70% 0 5% 0);translate:3px}}
+.sub{font-family:var(--serif);font-size:clamp(1.05rem,3vw,1.5rem);margin-top:16px;letter-spacing:.08em}
+.facts{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 0;margin:26px 0 6px;font-family:var(--serif);letter-spacing:.06em;font-size:clamp(1rem,2.6vw,1.2rem)}
+.facts span{padding:0 18px;border-left:1px solid var(--line)}
+.facts span:first-child{border:0}
+@media (max-width:560px){.facts{flex-direction:column;gap:2px}.facts span{border:0;padding:0}}
+.count{margin-top:16px;font-family:var(--serif);letter-spacing:.2em;text-transform:uppercase;font-size:.85rem;color:var(--amber)}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+/* slab buttons: matte black body, window reflection, travelling glint, silver embossed label */
+.btn{--mx:50%;--my:30%;--tx:0px;--ty:0px;--rim:rgba(255,255,255,.2);--hi:rgba(255,255,255,.28);--glow:rgba(255,255,255,0);--glow2:rgba(255,255,255,.22);
+  position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font:700 1rem var(--sans);letter-spacing:.01em;text-decoration:none;cursor:pointer;border:0;color:#e8ebf1;
+  padding:17px 36px;border-radius:999px;-webkit-tap-highlight-color:transparent;
+  background:radial-gradient(120% 170% at 28% 6%,#383840 0%,#131317 48%,#050507 100%);
+  text-shadow:0 -1px 0 rgba(0,0,0,.9),0 1px 0 rgba(255,255,255,.22);
+  box-shadow:inset 0 1px 0 var(--hi),inset 0 -12px 20px rgba(0,0,0,.65),0 0 0 1px var(--rim),0 20px 30px -16px rgba(0,0,0,.95),0 0 26px -8px var(--glow);
+  transform:translate(var(--tx),var(--ty));
+  transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s,color .3s}
+.btn::before,.btn::after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none}
+.btn::before{background:radial-gradient(60% 95% at 22% -12%,rgba(255,255,255,.36),transparent 62%),
+  linear-gradient(115deg,transparent 38%,rgba(255,255,255,.32) 47%,rgba(255,255,255,.08) 53%,transparent 60%);
+  background-size:100% 100%,260% 100%;background-position:0 0,150% 0;background-repeat:no-repeat;animation:glint 4.8s ease-in-out infinite}
+.btn::after{opacity:0;transition:opacity .3s;background:radial-gradient(120px circle at var(--mx) var(--my),rgba(255,255,255,.3),transparent 65%)}
+@keyframes glint{0%,48%{background-position:0 0,150% 0}100%{background-position:0 0,-70% 0}}
+.btn:hover{transform:translate(var(--tx),calc(var(--ty) - 4px)) scale(1.025);color:#fff;
+  box-shadow:inset 0 1px 0 var(--hi),inset 0 -12px 20px rgba(0,0,0,.65),0 0 0 1px var(--rim),0 36px 46px -22px rgba(0,0,0,.95),0 0 44px -6px var(--glow2)}
+.btn:hover::after{opacity:1}
+.btn:active{transform:translate(var(--tx),calc(var(--ty) + 2px)) scale(.98)}
+.btn-primary{--rim:rgba(255,255,255,.3);--hi:rgba(255,255,255,.4);--glow:rgba(255,255,255,.07);--glow2:rgba(255,255,255,.32)}
+.btn-ghost{--rim:rgba(255,255,255,.22)}
+.btn.sm{padding:9px 18px;font-size:.82rem}
+.btn:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+@media (max-width:600px){.cta-row .btn{width:100%;max-width:320px}}
+
+.dark{position:absolute;inset:0;z-index:4;pointer-events:none;opacity:0;transition:opacity .4s;
+  background:radial-gradient(circle 220px at var(--mx,50%) var(--my,50%),transparent 0,rgba(5,3,9,.35) 55%,rgba(5,3,9,.78) 100%)}
+@media (pointer:fine){.hero:hover .dark{opacity:1}}
+
+.fog{position:absolute;left:-50%;width:200%;height:46%;bottom:0;z-index:3;pointer-events:none;filter:blur(30px);opacity:.55;
+  background:radial-gradient(ellipse 18% 50% at 10% 60%,#b8a6d9 0,transparent 70%),radial-gradient(ellipse 22% 55% at 38% 70%,#9d8ac2 0,transparent 70%),
+  radial-gradient(ellipse 20% 50% at 66% 55%,#c1b0e0 0,transparent 70%),radial-gradient(ellipse 24% 60% at 92% 68%,#a392c8 0,transparent 70%);animation:drift 40s linear infinite}
+.fog.two{height:34%;opacity:.35;animation-duration:65s;animation-direction:reverse}
+@keyframes drift{to{transform:translateX(25%)}}
+
+.bat{position:absolute;top:var(--y);left:-80px;width:var(--s);color:#05030a;z-index:2;animation:fly var(--d) linear var(--delay) infinite;filter:drop-shadow(0 0 6px rgba(138,61,255,.5))}
+.bat svg{width:100%;display:block;animation:flap .35s ease-in-out infinite alternate}
+@keyframes fly{0%{transform:translate(0,0)}25%{transform:translate(28vw,-40px)}50%{transform:translate(58vw,30px)}75%{transform:translate(84vw,-30px)}100%{transform:translate(calc(100vw + 160px),10px)}}
+@keyframes flap{to{transform:scaleY(.45)}}
+
+.yard{position:absolute;left:0;right:0;bottom:-2px;z-index:6;height:clamp(70px,14vw,150px);pointer-events:none}
+.yard svg{width:100%;height:100%;display:block}
+
+.web{position:absolute;top:0;width:clamp(110px,22vw,260px);opacity:.5;z-index:7;pointer-events:none;color:#cfc6dd}
+.web.l{left:0}.web.r{right:0;transform:scaleX(-1)}
+
+/* hanging spiders: pendulum swing + bob on a thread */
+.hang{position:absolute;top:0;z-index:9;pointer-events:none;transform-origin:50% 0;animation:sway var(--sw,5s) ease-in-out infinite alternate}
+.hang.a{right:14%;--sw:5s}
+.hang.b{left:20%;--sw:6.5s;animation-delay:-2s}
+.hang .bob{position:relative;animation:bob var(--bb,7s) ease-in-out infinite}
+.hang.b .bob{--bb:9s;animation-delay:-3s}
+.hang i{position:absolute;left:50%;bottom:100%;width:1px;height:70vh;background:rgba(255,255,255,.4)}
+.hang svg{display:block;width:var(--w,56px);margin-left:calc(var(--w,56px) / -2);animation:legs 1.6s ease-in-out infinite alternate;transform-origin:50% 30%}
+.hang.a{--w:60px}.hang.b{--w:38px}
+@keyframes sway{from{rotate:-5deg}to{rotate:5deg}}
+@keyframes bob{0%,100%{transform:translateY(60px)}50%{transform:translateY(230px)}}
+@keyframes legs{to{scale:1.07 .96}}
+@media (max-width:600px){.hang.b{display:none}.hang.a{right:8%;--w:48px}}
+
+/* ---------- sections ---------- */
+.split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,80px);align-items:start}
+@media (max-width:820px){.split{grid-template-columns:1fr}}
+.rows{list-style:none;border-top:1px solid var(--line)}
+.rows li{position:relative;display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:18px 0 18px 26px;border-bottom:1px solid var(--line);transition:padding .3s,color .3s}
+.rows li::before{content:"";position:absolute;left:4px;top:50%;width:9px;height:9px;translate:0 -50%;rotate:45deg;background:var(--orange);box-shadow:0 0 10px rgba(255,106,0,.7)}
+.rows li:hover{padding-left:36px;color:var(--amber)}
+.rows .t{font-family:var(--serif);font-size:clamp(1.15rem,3vw,1.5rem);letter-spacing:.04em}
+.rows .s{font-size:.85rem;color:var(--muted);text-align:right}
+.total{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px;padding-top:24px}
+.total span{font-family:var(--serif);letter-spacing:.2em;text-transform:uppercase;font-size:.8rem;color:var(--muted)}
+.total b{font-family:var(--display);font-weight:400;font-size:clamp(3rem,9vw,5rem);line-height:1;color:var(--amber);text-shadow:0 0 22px rgba(255,179,71,.4)}
+
+.games{list-style:none;counter-reset:g;border-top:1px solid var(--line)}
+.games li{counter-increment:g;display:flex;align-items:baseline;gap:18px;padding:clamp(12px,2vw,22px) 0;border-bottom:1px solid var(--line);transition:padding .35s,color .35s}
+.games li::before{content:"0" counter(g);font-family:var(--serif);font-size:.85rem;color:var(--orange);width:28px;flex:none}
+.games .g{font-family:var(--display);font-size:clamp(2.2rem,9vw,5.2rem);line-height:1.05;letter-spacing:.03em}
+.games li:hover{padding-left:20px;color:var(--orange);text-shadow:0 0 22px rgba(255,106,0,.5)}
+
+#tickets{background:linear-gradient(180deg,var(--bg),var(--bg2) 50%,var(--bg))}
+.tickets{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:820px;margin:0 auto}
+.ticket{position:relative;padding:34px 28px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.02));text-align:center;transition:transform .3s}
+.ticket::before,.ticket::after{content:"";position:absolute;top:58%;width:26px;height:26px;border-radius:50%;background:var(--bg2);border:1px solid var(--line)}
+.ticket::before{left:-14px}.ticket::after{right:-14px}
+@media (hover:hover){.ticket:hover{transform:translateY(-8px) rotate(-.6deg)}}
+.ticket.best{border-color:var(--orange);box-shadow:0 0 0 1px rgba(255,106,0,.4),0 20px 70px rgba(255,80,0,.22)}
+.ribbon{position:absolute;top:-13px;left:50%;translate:-50% 0;background:linear-gradient(135deg,var(--orange),var(--blood));font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:5px 14px;border-radius:99px;white-space:nowrap}
+.ticket h3{font-family:var(--serif);letter-spacing:.1em;text-transform:uppercase;font-size:1rem;color:var(--muted);font-weight:500}
+.price{font-family:var(--display);font-size:3.8rem;line-height:1.1;color:var(--amber);margin:10px 0 2px;text-shadow:0 0 22px rgba(255,179,71,.4)}
+.per{color:var(--muted);font-size:.9rem;margin-bottom:20px;min-height:1.4em}
+.ticket ul{list-style:none;text-align:left;margin:0 0 26px;display:grid;gap:8px;font-size:.95rem;border-top:1px dashed var(--line);padding-top:20px}
+.ticket li{position:relative;padding-left:22px}
+.ticket li::before{content:"";position:absolute;left:3px;top:.55em;width:7px;height:7px;rotate:45deg;background:var(--orange)}
+.ticket .btn{width:100%}
+
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;max-width:900px;margin:64px auto 0;counter-reset:s}
+.step{padding:20px 20px 20px 64px;position:relative;border-left:1px solid var(--line)}
+.step::before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:14px;font-family:var(--display);font-size:2.4rem;color:var(--orange);text-shadow:0 0 14px rgba(255,106,0,.5)}
+.step b{display:block;font-family:var(--serif);color:var(--amber);letter-spacing:.05em}
+.step span{color:var(--muted);font-size:.93rem}
+.upi{max-width:560px;margin:44px auto 0;padding:20px 22px;border:1px dashed rgba(255,179,71,.5);border-radius:16px;text-align:center;background:rgba(0,0,0,.35)}
+.upi small{display:block;color:var(--muted);letter-spacing:.2em;text-transform:uppercase;font-size:.7rem;margin-bottom:6px}
+.upi code{font-size:1.05rem;color:var(--amber);word-break:break-all}
+.upi button{margin-top:12px;padding:9px 18px;font-size:.88rem}
+.note{color:var(--muted);font-size:.85rem;margin-top:8px}
+
+.rules{list-style:none;counter-reset:r;border-top:1px solid var(--line)}
+.rules li{counter-increment:r;display:grid;grid-template-columns:44px 1fr;padding:18px 0;border-bottom:1px solid var(--line)}
+.rules li::before{content:"0" counter(r);font-family:var(--display);font-size:1.6rem;line-height:1;color:var(--orange);text-shadow:0 0 12px rgba(255,106,0,.5)}
+.rules b{font-family:var(--serif);letter-spacing:.04em;color:var(--amber);font-weight:700}
+
+.find{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,6vw,80px);align-items:end}
+@media (max-width:820px){.find{grid-template-columns:1fr}}
+.find .big{font-family:var(--display);font-size:clamp(2.8rem,10vw,6.4rem);line-height:.98;letter-spacing:.03em;color:var(--orange);text-shadow:0 0 30px rgba(255,106,0,.4)}
+.find p{color:var(--muted);margin-bottom:22px;max-width:36ch}
+
+footer{text-align:center;padding:70px 16px 54px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line);position:relative;z-index:2}
+footer .big{font-family:var(--display);font-size:clamp(1.9rem,5.5vw,3rem);color:var(--orange);margin-bottom:18px;text-shadow:0 0 20px rgba(255,106,0,.4)}
+
+dialog{border:1px solid var(--line);border-radius:18px;background:#120c1c;color:var(--ink);width:min(640px,100% - 20px);height:min(90vh,880px);padding:0;overflow:hidden;margin:auto}
+dialog::backdrop{background:rgba(3,1,8,.85);backdrop-filter:blur(4px)}
+.dbody{height:calc(100% - 52px);overflow:auto;scrollbar-color:#4a2f78 transparent;padding:22px 22px 30px}
+#bookForm{display:grid;gap:18px}
+.f{display:grid;gap:6px;font-family:var(--serif);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.f input[type=text],.f input[type=tel],.f input[type=email]{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--ink);font:400 1rem var(--sans);letter-spacing:0;text-transform:none}
+.f input[type=file]{width:100%;padding:10px;border:1px dashed var(--line);border-radius:10px;color:var(--muted);font:400 .9rem var(--sans);letter-spacing:0;text-transform:none}
+.f input:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,106,0,.2)}
+.f input::placeholder{color:rgba(167,156,180,.55)}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;border:0}
+@media (max-width:520px){.opts{grid-template-columns:1fr}}
+.opt{position:relative;display:block}
+.opt input{position:absolute;opacity:0;inset:0}
+.opt span{display:block;padding:14px 16px;border:1px solid var(--line);border-radius:12px;cursor:pointer;transition:border-color .2s,background .2s}
+.opt b{display:block;font-family:var(--display);font-weight:400;font-size:1.8rem;color:var(--amber);line-height:1.1}
+.opt small{color:var(--muted);font-size:.85rem}
+.opt input:checked+span{border-color:var(--orange);background:rgba(255,106,0,.12)}
+.opt input:focus-visible+span{outline:2px solid var(--amber);outline-offset:2px}
+.legend{font-family:var(--serif);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.members{display:grid;gap:10px}
+.paybox{border:1px dashed rgba(255,179,71,.5);border-radius:12px;padding:14px 16px;background:rgba(0,0,0,.3);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px}
+.paybox p{font-size:.95rem}
+.paybox code{color:var(--amber);word-break:break-all}
+.paybox button{padding:8px 16px;font-size:.82rem}
+.status{font-size:.92rem;min-height:1.3em}
+.status.err{color:#ff7b7b}.status.ok{color:var(--amber)}
+#bookForm .btn{width:100%}
+.done{text-align:center;padding:40px 10px}
+.done h3{font-family:var(--display);font-weight:400;font-size:2.6rem;color:var(--orange);text-shadow:0 0 22px rgba(255,106,0,.45);margin-bottom:10px}
+.done p{color:var(--muted);max-width:40ch;margin:0 auto 22px}
+.dhead{display:flex;justify-content:space-between;align-items:center;padding:10px 14px 10px 20px;border-bottom:1px solid var(--line);height:52px}
+.dhead span{font-family:var(--serif);letter-spacing:.08em;color:var(--amber)}
+
+/* marquee band */
+.marquee{position:relative;z-index:12;overflow:hidden;margin:-28px -3vw 0;padding:14px 0;rotate:-1.4deg;background:linear-gradient(90deg,var(--orange),var(--blood));border-block:2px solid #000;box-shadow:0 10px 40px rgba(255,80,0,.25)}
+.mq-track{display:flex;width:max-content;animation:mq 34s linear infinite}
+.marquee:hover .mq-track{animation-play-state:paused}
+.mq-track span{font-family:var(--display);font-size:clamp(1.3rem,3.4vw,2rem);letter-spacing:.08em;color:#14070a;padding:0 22px;white-space:nowrap}
+.mq-track span:nth-child(even){color:#fff3e0}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* border beam on the featured pass */
+@property --a{syntax:'<angle>';inherits:false;initial-value:0deg}
+.beam{position:absolute;inset:-1px;border-radius:20px;padding:2px;pointer-events:none;
+  background:conic-gradient(from var(--a),transparent 0 62%,var(--orange) 80%,var(--amber) 92%,transparent 100%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:spin 4.5s linear infinite}
+@keyframes spin{to{--a:360deg}}
+
+
+/* venom button, built into the hero: dark floor, edges faded into the page */
+.venom-cta{position:relative;width:min(560px,100%);height:clamp(250px,36vh,320px);margin:6px auto 0;
+  -webkit-mask-image:radial-gradient(closest-side,#000 62%,transparent 100%);mask-image:radial-gradient(closest-side,#000 62%,transparent 100%)}
+.venom-cta iframe{display:block;width:100%;height:100%;border:0;background:transparent;color-scheme:dark}
+
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+@media (max-width:600px){section{padding:72px 0}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}.bat,#embers,.flash{display:none}
+}
+</style>
+</head>
+<body>
+
+<canvas id="embers" aria-hidden="true"></canvas>
+<div class="flash" id="flash" aria-hidden="true"></div>
+
+<header class="hero" id="top">
+  <div class="moon" aria-hidden="true"></div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="batshape" viewBox="0 0 100 40"><path fill="currentColor" d="M50 8c3 0 4 4 6 4s3-4 6-3c4 2 8 8 14 8 6 0 12-6 22-9-4 6-5 12-10 14-4 2-7 1-9 4-2 3-1 7-4 9-3-4-6-6-11-6-3 0-5 3-6 7-1-4-3-7-6-7-5 0-8 2-11 6-3-2-2-6-4-9-2-3-5-2-9-4C7 23 6 17 2 11c10 3 16 9 22 9 6 0 10-6 14-8 3-1 4 3 6 3s3-7 6-7z"/></symbol>
+      <symbol id="spider" viewBox="0 0 64 64">
+        <g fill="#0b0712" stroke="#0b0712" stroke-width="3" stroke-linecap="round">
+          <ellipse cx="32" cy="40" rx="12" ry="15" stroke="none"/><circle cx="32" cy="22" r="8" stroke="none"/>
+          <path fill="none" d="M24 30C14 24 8 20 4 10M23 36C12 36 6 40 2 50M24 43C16 49 14 55 12 63M40 30c10-6 16-10 20-20M41 36c11 0 17 4 21 14M40 43c8 6 10 12 12 20"/>
+        </g>
+        <circle cx="28.5" cy="21" r="1.8" fill="#ff2a2a"/><circle cx="35.5" cy="21" r="1.8" fill="#ff2a2a"/>
+        <path d="M32 31l0 18" stroke="#ff6a00" stroke-width="2" opacity=".6"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="bat" style="--y:14%;--s:54px;--d:19s;--delay:0s"><svg viewBox="0 0 100 40"><use href="#batshape"/></svg></div>
+  <div class="bat" style="--y:30%;--s:38px;--d:25s;--delay:-8s"><svg viewBox="0 0 100 40"><use href="#batshape"/></svg></div>
+  <div class="bat" style="--y:9%;--s:30px;--d:22s;--delay:-14s"><svg viewBox="0 0 100 40"><use href="#batshape"/></svg></div>
+  <div class="bat" style="--y:42%;--s:46px;--d:30s;--delay:-3s"><svg viewBox="0 0 100 40"><use href="#batshape"/></svg></div>
+
+  <svg class="web l" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 0L200 0M0 0L0 200M0 0L170 170M0 0L200 80M0 0L80 200M0 0L195 140M0 0L140 195"/><path d="M0 40Q36 36 40 0M0 80Q60 70 80 0M0 120Q86 104 120 0M0 160Q112 140 160 0M0 195Q140 170 195 0"/></svg>
+  <svg class="web r" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 0L200 0M0 0L0 200M0 0L170 170M0 0L200 80M0 0L80 200M0 0L195 140M0 0L140 195"/><path d="M0 40Q36 36 40 0M0 80Q60 70 80 0M0 120Q86 104 120 0M0 160Q112 140 160 0M0 195Q140 170 195 0"/></svg>
+
+  <div class="hang a" aria-hidden="true"><div class="bob"><i></i><svg viewBox="0 0 64 64"><use href="#spider"/></svg></div></div>
+  <div class="hang b" aria-hidden="true"><div class="bob"><i></i><svg viewBox="0 0 64 64"><use href="#spider"/></svg></div></div>
+
+  <div class="wrap hero-inner">
+    <span class="tag">Frat Party 2026</span>
+    <h1 data-text="HALLOWEEN">HALLOWEEN</h1>
+    <p class="sub">Dress up. Drink up. Party by the pool.</p>
+    <p class="facts"><span>31 October</span><span>3 PM to 7 PM</span><span>Bay Minaret, ECR</span></p>
+    <p class="count" id="count"></p>
+    <div class="venom-cta"><iframe src="venom.html" title="Get your pass" allowtransparency="true"></iframe></div>
+    <div class="cta-row" style="margin-top:0">
+      <a class="btn btn-ghost" href="#details">What's included</a>
+    </div>
+  </div>
+
+  <div class="dark" id="dark" aria-hidden="true"></div>
+  <div class="fog" aria-hidden="true"></div>
+  <div class="fog two" aria-hidden="true"></div>
+  <div class="yard" aria-hidden="true">
+    <svg viewBox="0 0 1200 150" preserveAspectRatio="none" fill="#07050b">
+      <path d="M0 150V110h40V88q10-14 20 0v22h60V96h6V70l8-14 8 14v26h6v14h70V40l-6-8 8-26 8 26-6 8v70h40V96q12-18 24 0v14h60V98l24-30 24 30v12h50v-34l-12-8V54l16-10 16 10v14l-12 8v34h70V92q10-16 20 0v18h56V60l-5-6 5-34 5 34-5 6v50h90V96h8V80h12v16h8v14h44V84q14-22 28 0v26h60V60l-8-10 8-40 8 40-8 10v50h66V98h20v12h50V78l10-14 10 14v32h54V90h10V76h12v14h10v20h60V104q8-14 16 0v6h56V70l-6-8 6-36 6 36-6 8v40h60V96h30v14h30V150z"/>
+    </svg>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true"><div class="mq-track">
+  <span>31 OCT</span><span>3 PM TO 7 PM</span><span>BAY MINARET ECR</span><span>POOL</span><span>DJ</span><span>3 SHOTS</span><span>BYOB</span><span>COSTUMES</span><span>31 OCT</span><span>3 PM TO 7 PM</span><span>BAY MINARET ECR</span><span>POOL</span><span>DJ</span><span>3 SHOTS</span><span>BYOB</span><span>COSTUMES</span>
+  <span>31 OCT</span><span>3 PM TO 7 PM</span><span>BAY MINARET ECR</span><span>POOL</span><span>DJ</span><span>3 SHOTS</span><span>BYOB</span><span>COSTUMES</span><span>31 OCT</span><span>3 PM TO 7 PM</span><span>BAY MINARET ECR</span><span>POOL</span><span>DJ</span><span>3 SHOTS</span><span>BYOB</span><span>COSTUMES</span>
+</div></div>
+
+<section id="details">
+  <div class="wrap split">
+    <div class="rv">
+      <p class="eyebrow">The night</p>
+      <h2>What's included</h2>
+      <p class="lede" style="margin-bottom:0">Four hours by the pool as the sun goes down. One pass covers all of this.</p>
+    </div>
+    <div class="rv">
+      <ul class="rows">
+        <li><span class="t">Snacks</span><span class="s">Included</span></li>
+        <li><span class="t">Refreshments</span><span class="s">Included</span></li>
+        <li><span class="t">3 shots</span><span class="s">Per guest</span></li>
+        <li><span class="t">BYOB</span><span class="s">Bring your own bottle</span></li>
+        <li><span class="t">Pool access</span><span class="s">All afternoon</span></li>
+        <li><span class="t">Room access</span><span class="s">Included</span></li>
+      </ul>
+      <div class="total"><span>All of it, one pass</span><b>₹999</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="games">
+  <div class="wrap">
+    <p class="eyebrow rv">On the schedule</p>
+    <h2 class="rv">Games</h2>
+    <ol class="games rv" style="margin-top:34px">
+      <li><span class="g">Beer pong</span></li>
+      <li><span class="g">Flip cup</span></li>
+      <li><span class="g">Never have I ever</span></li>
+      <li><span class="g">Truth or drink</span></li>
+      <li><span class="g">Drink n DJ</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="tickets">
+  <div class="wrap center">
+    <p class="eyebrow rv">Choose your fate</p>
+    <h2 class="rv">Passes</h2>
+    <p class="lede rv">Entry is for confirmed guests only. Pick a pass, pay by UPI, and you're on the list.</p>
+
+    <div class="tickets">
+      <article class="ticket rv">
+        <h3>Individual</h3>
+        <div class="price">₹999</div>
+        <p class="per">per person</p>
+        <ul><li>One entry</li><li>Snacks, refreshments, 3 shots</li><li>Pool and room access</li></ul>
+        <button class="btn btn-ghost" data-open-form data-package="individual">Book individual</button>
+      </article>
+      <article class="ticket best rv">
+        <span class="beam" aria-hidden="true"></span>
+        <span class="ribbon">Best value</span>
+        <h3>Group of six</h3>
+        <div class="price">₹5,499</div>
+        <p class="per">about ₹917 each, you save ₹495</p>
+        <ul><li>Entry for six guests</li><li>Snacks, refreshments, 3 shots each</li><li>Pool and room access</li></ul>
+        <button class="btn btn-primary" data-open-form data-package="group">Book group</button>
+      </article>
+    </div>
+
+    <div class="steps" style="text-align:left">
+      <div class="step rv"><b>Fill your details</b><span>Pick individual or group and enter your details.</span></div>
+      <div class="step rv"><b>Pay by UPI</b><span>Pay the exact amount to the UPI ID shown.</span></div>
+      <div class="step rv"><b>Send proof</b><span>Enter your UTR / transaction ID and upload the screenshot.</span></div>
+    </div>
+
+    <div class="upi rv">
+      <small>Pay by UPI</small>
+      <code id="upiid">example@upi</code><br>
+      <button class="btn btn-ghost" id="copy">Copy UPI ID</button>
+      <p class="note">Pay the exact amount for your pass, then submit the form.</p>
+    </div>
+  </div>
+</section>
+
+<section id="rules">
+  <div class="wrap split">
+    <div class="rv">
+      <p class="eyebrow">Read before you come</p>
+      <h2>House rules</h2>
+    </div>
+    <ol class="rules rv">
+      <li><span><b>No drugs.</b> Anything prohibited stays outside.</span></li>
+      <li><span><b>Thorough checks.</b> Everyone is checked by security at the gate.</span></li>
+      <li><span><b>No weapons.</b> No exceptions.</span></li>
+      <li><span><b>Confirmed guests only.</b> You need a valid entry code. One pass allows one entry.</span></li>
+      <li><span><b>Get home safe.</b> After the party, everyone makes sure they leave safely.</span></li>
+      <li><span><b>Travel is on you.</b> The hosts aren't responsible for how you get there or back.</span></li>
+      <li><span><b>Entry can be refused</b> or revoked for safety, security or breaking the rules.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="find">
+  <div class="wrap find">
+    <div class="rv">
+      <p class="eyebrow">The venue</p>
+      <div class="big">Bay Minaret,<br>ECR, Chennai</div>
+    </div>
+    <div class="rv">
+      <p>East Coast Road. Open the map for directions and share the pin with your group.</p>
+      <a class="btn btn-ghost" id="maps" href="https://www.google.com/maps/search/?api=1&query=Bay+Minaret+ECR+Chennai" target="_blank" rel="noopener">Open in Google Maps</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="big">See you in the costumes.</div>
+  <button class="btn btn-primary" data-open-form>Get your pass</button>
+</footer>
+
+<dialog id="formModal" aria-label="Book your pass">
+  <div class="dhead"><span>Book your pass</span><button class="btn btn-ghost sm" id="closeForm" type="button" aria-label="Close booking form">Close</button></div>
+  <div class="dbody">
+    <form id="bookForm">
+      <fieldset class="opts">
+        <legend class="legend">Choose your pass</legend>
+        <label class="opt"><input type="radio" name="package" value="individual" required><span><b>₹999</b><small>Individual, one guest</small></span></label>
+        <label class="opt"><input type="radio" name="package" value="group"><span><b>₹5,499</b><small>Group of six</small></span></label>
+      </fieldset>
+
+      <label class="f">Full name<input type="text" name="name" autocomplete="name" required></label>
+      <label class="f">Instagram username<input type="text" name="instagram" placeholder="@yourname" required></label>
+      <label class="f">WhatsApp number<input type="tel" name="whatsapp" inputmode="tel" autocomplete="tel" placeholder="+91 98765 43210" pattern="[+0-9 ()\-]{10,16}" required></label>
+      <label class="f">Email<input type="email" name="email" autocomplete="email" required></label>
+
+      <div id="members" class="members" hidden>
+        <p class="legend" style="margin:0">The other five guests</p>
+      </div>
+
+      <div class="paybox">
+        <p>Pay <b id="payAmt">the exact amount</b> to <code id="payUpi"></code></p>
+        <button type="button" class="btn btn-ghost" id="payCopy">Copy UPI ID</button>
+      </div>
+
+      <label class="f">UTR / transaction ID<input type="text" name="utr" placeholder="12 digit reference from your UPI app" pattern="[A-Za-z0-9]{10,24}" required></label>
+      <label class="f">Payment screenshot<input type="file" name="screenshot" accept="image/*" required></label>
+
+      <p class="status" id="formStatus" role="status"></p>
+      <button class="btn btn-primary" type="submit" id="submitBtn">Submit booking</button>
+    </form>
+    <div class="done" id="done" hidden>
+      <h3>You're in the crypt</h3>
+      <p id="doneMsg">We'll check your payment and confirm on WhatsApp.</p>
+      <button class="btn btn-ghost" type="button" id="doneClose">Close</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+const CONFIG = {
+  start: "2026-10-31T15:00:00+05:30",
+  end:   "2026-10-31T19:00:00+05:30",
+  upiId: "example@upi",                 // replace with the host's real UPI ID
+  prices: { individual: 999, group: 5499 },
+  endpoint: "",                         // Formspree / Web3Forms / Apps Script URL that receives the booking (POST, multipart)
+  whatsapp: ""                          // fallback: host number with country code, digits only, e.g. "919876543210"
+};
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* countdown */
+(() => {
+  const el = document.getElementById('count');
+  const s = new Date(CONFIG.start).getTime(), e = new Date(CONFIG.end).getTime();
+  const p = n => String(n).padStart(2, '0');
+  const tick = () => {
+    const now = Date.now();
+    if (now >= e) { el.textContent = 'This one is over. See you next year.'; return; }
+    if (now >= s) { el.textContent = 'Doors are open.'; return; }
+    const t = s - now;
+    el.textContent = `${Math.floor(t / 864e5)}d ${p(Math.floor(t / 36e5) % 24)}h ${p(Math.floor(t / 6e4) % 60)}m ${p(Math.floor(t / 1e3) % 60)}s to go`;
+  };
+  tick(); setInterval(tick, 1000);
+})();
+
+/* booking form */
+const modal = document.getElementById('formModal'), form = document.getElementById('bookForm');
+const membersBox = document.getElementById('members'), statusEl = document.getElementById('formStatus');
+const inr = n => '₹' + n.toLocaleString('en-IN');
+document.getElementById('payUpi').textContent = CONFIG.upiId;
+document.getElementById('upiid').textContent = CONFIG.upiId;
+
+for (let i = 1; i <= 5; i++) {
+  const l = document.createElement('label');
+  l.className = 'f';
+  l.innerHTML = `Guest ${i + 1} name<input type="text" name="member${i}" autocomplete="off">`;
+  membersBox.appendChild(l);
+}
+const syncPackage = () => {
+  const pkg = form.package.value;
+  const group = pkg === 'group';
+  membersBox.hidden = !group;
+  membersBox.querySelectorAll('input').forEach(i => i.required = group);
+  document.getElementById('payAmt').textContent = pkg ? inr(CONFIG.prices[pkg]) : 'the exact amount';
+};
+form.querySelectorAll('input[name=package]').forEach(r => r.addEventListener('change', syncPackage));
+
+const openForm = pkg => {
+  document.getElementById('done').hidden = true; form.hidden = false; statusEl.textContent = '';
+  if (pkg) { const r = form.querySelector(`input[name=package][value=${pkg}]`); if (r) r.checked = true; }
+  syncPackage();
+  if (!modal.open) modal.showModal();
+};
+document.querySelectorAll('[data-open-form]').forEach(b => b.addEventListener('click', () => openForm(b.dataset.package)));
+addEventListener('message', e => { if (e.data && e.data.venom === 'activate') openForm(); });
+document.getElementById('closeForm').onclick = () => modal.close();
+document.getElementById('doneClose').onclick = () => modal.close();
+modal.addEventListener('click', e => { if (e.target === modal) modal.close(); });
+document.getElementById('payCopy').onclick = async e => {
+  const btn = e.currentTarget;
+  try { await navigator.clipboard.writeText(CONFIG.upiId); btn.textContent = 'Copied'; } catch { btn.textContent = 'Select and copy'; }
+  setTimeout(() => btn.textContent = 'Copy UPI ID', 2000);
+};
+
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const say = (t, cls = '') => { statusEl.textContent = t; statusEl.className = 'status ' + cls; };
+  if (!form.reportValidity()) return;
+  const file = form.screenshot.files[0];
+  if (file && file.size > 10 * 1024 * 1024) { say('The screenshot must be under 10 MB.', 'err'); return; }
+  const pkg = form.package.value, amount = CONFIG.prices[pkg];
+  const fd = new FormData(form);
+  fd.append('amount', amount);
+  const btn = document.getElementById('submitBtn');
+  const finish = msg => { document.getElementById('doneMsg').textContent = msg; form.hidden = true; document.getElementById('done').hidden = false; form.reset(); syncPackage(); };
+
+  if (CONFIG.endpoint) {
+    btn.disabled = true; say('Sending…');
+    try {
+      const r = await fetch(CONFIG.endpoint, { method: 'POST', body: fd, headers: { Accept: 'application/json' } });
+      if (!r.ok) throw new Error(r.status);
+      finish("We'll check your payment and confirm on WhatsApp.");
+    } catch { say('Could not send. Check your connection and try again.', 'err'); }
+    btn.disabled = false;
+  } else if (CONFIG.whatsapp) {
+    const members = [1, 2, 3, 4, 5].map(i => fd.get('member' + i)).filter(Boolean);
+    const text = [`Frat Party 2026 booking`, `Pass: ${pkg === 'group' ? 'Group of six' : 'Individual'} (${inr(amount)})`, `Name: ${fd.get('name')}`,
+      `Instagram: ${fd.get('instagram')}`, `WhatsApp: ${fd.get('whatsapp')}`, `Email: ${fd.get('email')}`, members.length ? `Guests: ${members.join(', ')}` : '',
+      `UTR: ${fd.get('utr')}`, `(Payment screenshot attached below)`].filter(Boolean).join('\n');
+    open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`, '_blank');
+    finish('WhatsApp opened with your details. Attach your payment screenshot there and send it.');
+  } else {
+    say('Demo mode: the host has not connected a booking inbox yet, so nothing was sent.', 'err');
+  }
+});
+
+/* copy UPI */
+document.getElementById('copy').onclick = async e => {
+  const btn = e.currentTarget;
+  try { await navigator.clipboard.writeText(document.getElementById('upiid').textContent); btn.textContent = 'Copied'; }
+  catch { btn.textContent = 'Select and copy above'; }
+  setTimeout(() => btn.textContent = 'Copy UPI ID', 2000);
+};
+
+/* reveal on scroll */
+const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }), { threshold: .12 });
+document.querySelectorAll('.rv').forEach((el, i) => { el.style.transitionDelay = (i % 3) * 80 + 'ms'; io.observe(el); });
+
+/* slab buttons: cursor specular + magnetic pull */
+document.querySelectorAll('.btn').forEach(b => {
+  b.addEventListener('pointermove', e => {
+    const r = b.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+    b.style.setProperty('--mx', x + 'px'); b.style.setProperty('--my', y + 'px');
+    b.style.setProperty('--tx', ((x - r.width / 2) * .07).toFixed(1) + 'px');
+    b.style.setProperty('--ty', ((y - r.height / 2) * .12).toFixed(1) + 'px');
+  });
+  b.addEventListener('pointerleave', () => { b.style.setProperty('--tx', '0px'); b.style.setProperty('--ty', '0px'); });
+});
+
+/* flashlight */
+const hero = document.querySelector('.hero'), dark = document.getElementById('dark');
+hero.addEventListener('pointermove', e => {
+  const r = hero.getBoundingClientRect();
+  dark.style.setProperty('--mx', e.clientX - r.left + 'px');
+  dark.style.setProperty('--my', e.clientY - r.top + 'px');
+});
+
+if (!reduce) {
+  /* lightning */
+  const flash = document.getElementById('flash');
+  (function bolt() {
+    setTimeout(() => { flash.classList.remove('on'); void flash.offsetWidth; flash.classList.add('on'); bolt(); }, 9000 + Math.random() * 9000);
+  })();
+
+  /* embers */
+  const cv = document.getElementById('embers'), cx = cv.getContext('2d');
+  let W, H; const parts = [];
+  const size = () => { W = cv.width = innerWidth; H = cv.height = innerHeight; };
+  addEventListener('resize', size); size();
+  const make = () => ({ x: Math.random() * W, y: H + 10, r: Math.random() * 2 + .6, v: Math.random() * .6 + .25, s: Math.random() * 6.28, a: Math.random() * .6 + .3 });
+  for (let i = 0; i < (innerWidth < 600 ? 28 : 60); i++) { const p = make(); p.y = Math.random() * H; parts.push(p); }
+  (function loop() {
+    cx.clearRect(0, 0, W, H);
+    for (const p of parts) {
+      p.y -= p.v; p.s += .015; p.x += Math.sin(p.s) * .35;
+      if (p.y < -10) Object.assign(p, make());
+      cx.beginPath(); cx.arc(p.x, p.y, p.r, 0, 7);
+      cx.fillStyle = `rgba(255,${120 + (p.r * 40 | 0)},30,${p.a})`;
+      cx.shadowColor = '#ff6a00'; cx.shadowBlur = 8; cx.fill();
+    }
+    requestAnimationFrame(loop);
+  })();
+}
+</script>
+</body>
+</html>
