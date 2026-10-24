@@ -39,14 +39,9 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,7vw,4.6rem)
 
 /* ---------- hero ---------- */
 .hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;padding:96px 0 190px;overflow:hidden;
-  background:radial-gradient(ellipse at 50% 18%,#2a1146 0%,#120a1f 45%,var(--bg) 78%)}
-.moon{position:absolute;top:7%;left:50%;width:clamp(140px,22vw,260px);aspect-ratio:1;translate:-50% 0;border-radius:50%;
-  background:radial-gradient(circle at 35% 35%,#fff8e6,#f3dfb0 55%,#d9b97a);
-  box-shadow:0 0 80px 30px rgba(255,190,100,.28),0 0 220px 90px rgba(255,106,0,.18);animation:moonpulse 6s ease-in-out infinite}
-.moon::before,.moon::after{content:"";position:absolute;border-radius:50%;background:rgba(150,110,50,.22)}
-.moon::before{width:22%;height:22%;top:22%;left:55%}
-.moon::after{width:14%;height:14%;top:58%;left:30%}
-@keyframes moonpulse{50%{box-shadow:0 0 100px 40px rgba(255,190,100,.34),0 0 260px 110px rgba(255,106,0,.22)}}
+  background:linear-gradient(180deg,#010308 0%,#040813 42%,#0a1220 74%,#0d1520 100%)}
+#sky{position:absolute;inset:0;width:100%;height:100%;z-index:12;pointer-events:none;opacity:0;transition:opacity 1.4s ease}
+#sky.ready{opacity:1}
 .hero-inner{position:relative;z-index:8;margin-top:clamp(150px,26vh,260px)}
 .tag{display:inline-block;font-family:var(--serif);letter-spacing:.4em;text-transform:uppercase;font-size:.78rem;color:var(--amber);
   border:1px solid rgba(255,179,71,.4);padding:6px 16px;border-radius:99px;background:rgba(0,0,0,.35);margin-bottom:22px}
@@ -95,9 +90,9 @@ h1::after{color:#00e5ff;text-shadow:none;animation:glitch2 5s infinite steps(1);
   background:radial-gradient(circle 220px at var(--mx,50%) var(--my,50%),transparent 0,rgba(5,3,9,.35) 55%,rgba(5,3,9,.78) 100%)}
 @media (pointer:fine){.hero:hover .dark{opacity:1}}
 
-.fog{position:absolute;left:-50%;width:200%;height:46%;bottom:0;z-index:3;pointer-events:none;filter:blur(30px);opacity:.55;
-  background:radial-gradient(ellipse 18% 50% at 10% 60%,#b8a6d9 0,transparent 70%),radial-gradient(ellipse 22% 55% at 38% 70%,#9d8ac2 0,transparent 70%),
-  radial-gradient(ellipse 20% 50% at 66% 55%,#c1b0e0 0,transparent 70%),radial-gradient(ellipse 24% 60% at 92% 68%,#a392c8 0,transparent 70%);animation:drift 40s linear infinite}
+.fog{position:absolute;left:-50%;width:200%;height:46%;bottom:0;z-index:3;pointer-events:none;filter:blur(30px);opacity:.3;
+  background:radial-gradient(ellipse 18% 50% at 10% 60%,#8fa3b8 0,transparent 70%),radial-gradient(ellipse 22% 55% at 38% 70%,#7d90a6 0,transparent 70%),
+  radial-gradient(ellipse 20% 50% at 66% 55%,#9fb2c6 0,transparent 70%),radial-gradient(ellipse 24% 60% at 92% 68%,#8498ae 0,transparent 70%);animation:drift 40s linear infinite}
 .fog.two{height:34%;opacity:.35;animation-duration:65s;animation-direction:reverse}
 @keyframes drift{to{transform:translateX(25%)}}
 
@@ -242,6 +237,7 @@ dialog::backdrop{background:rgba(3,1,8,.85);backdrop-filter:blur(4px)}
 .rv{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s}
 .rv.in{opacity:1;transform:none}
 @media (max-width:600px){section{padding:72px 0}}
+@media (max-width:760px),(pointer:coarse){.fog,.dark{display:none}h1::before,h1::after{display:none}.facts{margin-top:20px}}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .rv{opacity:1;transform:none}.bat,#embers,.flash{display:none}
@@ -254,32 +250,10 @@ dialog::backdrop{background:rgba(3,1,8,.85);backdrop-filter:blur(4px)}
 <div class="flash" id="flash" aria-hidden="true"></div>
 
 <header class="hero" id="top">
-  <div class="moon" aria-hidden="true"></div>
+  <canvas id="sky" aria-hidden="true"></canvas>
 
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <defs>
-      <symbol id="batshape" viewBox="0 0 100 40"><path fill="currentColor" d="M50 8c3 0 4 4 6 4s3-4 6-3c4 2 8 8 14 8 6 0 12-6 22-9-4 6-5 12-10 14-4 2-7 1-9 4-2 3-1 7-4 9-3-4-6-6-11-6-3 0-5 3-6 7-1-4-3-7-6-7-5 0-8 2-11 6-3-2-2-6-4-9-2-3-5-2-9-4C7 23 6 17 2 11c10 3 16 9 22 9 6 0 10-6 14-8 3-1 4 3 6 3s3-7 6-7z"/></symbol>
-      <symbol id="spider" viewBox="0 0 64 64">
-        <g fill="#0b0712" stroke="#0b0712" stroke-width="3" stroke-linecap="round">
-          <ellipse cx="32" cy="40" rx="12" ry="15" stroke="none"/><circle cx="32" cy="22" r="8" stroke="none"/>
-          <path fill="none" d="M24 30C14 24 8 20 4 10M23 36C12 36 6 40 2 50M24 43C16 49 14 55 12 63M40 30c10-6 16-10 20-20M41 36c11 0 17 4 21 14M40 43c8 6 10 12 12 20"/>
-        </g>
-        <circle cx="28.5" cy="21" r="1.8" fill="#ff2a2a"/><circle cx="35.5" cy="21" r="1.8" fill="#ff2a2a"/>
-        <path d="M32 31l0 18" stroke="#ff6a00" stroke-width="2" opacity=".6"/>
-      </symbol>
-    </defs>
-  </svg>
 
-  <div class="bat" style="--y:14%;--s:54px;--d:19s;--delay:0s"><svg viewBox="0 0 100 40"><use href="#batshape"/></svg></div>
-  <div class="bat" style="--y:30%;--s:38px;--d:25s;--delay:-8s"><svg viewBox="0 0 100 40"><use href="#batshape"/></svg></div>
-  <div class="bat" style="--y:9%;--s:30px;--d:22s;--delay:-14s"><svg viewBox="0 0 100 40"><use href="#batshape"/></svg></div>
-  <div class="bat" style="--y:42%;--s:46px;--d:30s;--delay:-3s"><svg viewBox="0 0 100 40"><use href="#batshape"/></svg></div>
 
-  <svg class="web l" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 0L200 0M0 0L0 200M0 0L170 170M0 0L200 80M0 0L80 200M0 0L195 140M0 0L140 195"/><path d="M0 40Q36 36 40 0M0 80Q60 70 80 0M0 120Q86 104 120 0M0 160Q112 140 160 0M0 195Q140 170 195 0"/></svg>
-  <svg class="web r" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 0L200 0M0 0L0 200M0 0L170 170M0 0L200 80M0 0L80 200M0 0L195 140M0 0L140 195"/><path d="M0 40Q36 36 40 0M0 80Q60 70 80 0M0 120Q86 104 120 0M0 160Q112 140 160 0M0 195Q140 170 195 0"/></svg>
-
-  <div class="hang a" aria-hidden="true"><div class="bob"><i></i><svg viewBox="0 0 64 64"><use href="#spider"/></svg></div></div>
-  <div class="hang b" aria-hidden="true"><div class="bob"><i></i><svg viewBox="0 0 64 64"><use href="#spider"/></svg></div></div>
 
   <div class="wrap hero-inner">
     <span class="tag">Frat Party 2026</span>
@@ -457,6 +431,8 @@ dialog::backdrop{background:rgba(3,1,8,.85);backdrop-filter:blur(4px)}
   </div>
 </dialog>
 
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}</script>
+<script type="module" src="js/sky.js?v=4"></script>
 <script>
 const CONFIG = {
   start: "2026-10-31T15:00:00+05:30",
@@ -467,6 +443,12 @@ const CONFIG = {
   whatsapp: ""                          // fallback: host number with country code, digits only, e.g. "919876543210"
 };
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* touch phones: swap the heavy venom canvas for the slab button so scrolling stays smooth */
+if (matchMedia('(pointer: coarse)').matches) {
+  document.querySelector('.venom-cta').outerHTML = '<div class="cta-row" style="margin:6px 0 14px"><button class="btn btn-primary" data-open-form>Get your pass</button></div>';
+}
+
 
 /* countdown */
 (() => {
