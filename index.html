@@ -58,7 +58,24 @@ h1::after{color:#00e5ff;text-shadow:none;animation:glitch2 5s infinite steps(1);
 .facts span{padding:0 18px;border-left:1px solid var(--line)}
 .facts span:first-child{border:0}
 @media (max-width:560px){.facts{flex-direction:column;gap:2px}.facts span{border:0;padding:0}}
-.count{margin-top:16px;font-family:var(--serif);letter-spacing:.2em;text-transform:uppercase;font-size:.85rem;color:var(--amber)}
+.countdown{margin:22px 0 4px}
+.cd-label{font-family:var(--serif);letter-spacing:.32em;text-transform:uppercase;font-size:.78rem;color:var(--amber);margin-bottom:12px}
+.cd-tiles{display:flex;justify-content:center;gap:10px}
+.cd-tile{position:relative;overflow:hidden;min-width:76px;padding:13px 8px 10px;border-radius:16px;text-align:center;
+  background:radial-gradient(120% 170% at 28% 6%,#383840 0%,#131317 48%,#050507 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.28),inset 0 -10px 18px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.14),0 16px 26px -14px rgba(0,0,0,.95)}
+.cd-tile::before{content:"";position:absolute;inset:0 0 50% 0;background:linear-gradient(180deg,rgba(255,255,255,.13),rgba(255,255,255,0));pointer-events:none}
+.cd-tile::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(0,0,0,.75);box-shadow:0 1px 0 rgba(255,255,255,.08);pointer-events:none}
+.cd-tile b{display:block;font:700 clamp(1.9rem,6.4vw,2.9rem)/1.05 var(--sans);font-variant-numeric:tabular-nums;color:#f3f0ea}
+.cd-tile.sec b{color:var(--amber);text-shadow:0 0 18px rgba(255,150,60,.45)}
+.cd-tile span{display:block;margin-top:2px;font:500 .62rem var(--serif);letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.cd-tile b.roll{animation:roll .55s cubic-bezier(.22,1,.36,1)}
+@keyframes roll{from{transform:translateY(-55%);opacity:0}to{transform:none;opacity:1}}
+.countdown.live .cd-label{color:#ff6a4a;animation:blink 1.6s ease-in-out infinite}
+.countdown.over .cd-tiles{display:none}
+.countdown.over .cd-label{font-size:1rem;letter-spacing:.18em;margin:0}
+@keyframes blink{50%{opacity:.45}}
+@media (max-width:420px){.cd-tiles{gap:7px}.cd-tile{min-width:66px;padding:11px 6px 9px}}
 .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:26px}
 /* slab buttons: matte black body, window reflection, travelling glint, silver embossed label */
 .btn{--mx:50%;--my:30%;--tx:0px;--ty:0px;--rim:rgba(255,255,255,.2);--hi:rgba(255,255,255,.28);--glow:rgba(255,255,255,0);--glow2:rgba(255,255,255,.22);
@@ -263,11 +280,18 @@ dialog::backdrop{background:rgba(3,1,8,.85);backdrop-filter:blur(4px)}
 
 
   <div class="wrap hero-inner">
-    <span class="tag">Halloween Night 2026</span>
     <h1 data-text="HALLOWEEN">HALLOWEEN</h1>
     <p class="sub">Dress up. Drink up. Party by the pool.</p>
     <p class="facts"><span>31 October</span><span>3 PM to 7 PM</span><span>Bay Minaret, ECR</span></p>
-    <p class="count" id="count"></p>
+    <div class="countdown" id="countdown" role="timer" aria-live="off">
+      <p class="cd-label" id="cdLabel">Doors open in</p>
+      <div class="cd-tiles" id="cdTiles">
+        <div class="cd-tile"><b id="cdD">00</b><span>days</span></div>
+        <div class="cd-tile"><b id="cdH">00</b><span>hours</span></div>
+        <div class="cd-tile"><b id="cdM">00</b><span>mins</span></div>
+        <div class="cd-tile sec"><b id="cdS">00</b><span>secs</span></div>
+      </div>
+    </div>
     <div class="venom-cta"><iframe src="venom.html" title="Get your pass" allowtransparency="true"></iframe></div>
     <div class="cta-row" style="margin-top:0">
       <a class="btn btn-ghost" href="#details">What's included</a>
@@ -479,17 +503,27 @@ if (matchMedia('(pointer: coarse)').matches) {
 }
 
 
-/* countdown */
+/* countdown: before the party it counts to the start, during 3 to 7 PM it counts to the end, after that it signs off */
 (() => {
-  const el = document.getElementById('count');
+  const box = document.getElementById('countdown'), label = document.getElementById('cdLabel');
+  const els = { d: document.getElementById('cdD'), h: document.getElementById('cdH'), m: document.getElementById('cdM'), s: document.getElementById('cdS') };
   const s = new Date(CONFIG.start).getTime(), e = new Date(CONFIG.end).getTime();
+  const last = {};
   const p = n => String(n).padStart(2, '0');
+  const put = (k, v) => {
+    if (last[k] === v) return;
+    last[k] = v; els[k].textContent = v;
+    if (!reduce) { els[k].classList.remove('roll'); void els[k].offsetWidth; els[k].classList.add('roll'); }
+  };
+  const show = (t) => {
+    put('d', p(Math.floor(t / 864e5))); put('h', p(Math.floor(t / 36e5) % 24));
+    put('m', p(Math.floor(t / 6e4) % 60)); put('s', p(Math.floor(t / 1e3) % 60));
+  };
   const tick = () => {
     const now = Date.now();
-    if (now >= e) { el.textContent = 'This one is over. See you next year.'; return; }
-    if (now >= s) { el.textContent = 'Doors are open.'; return; }
-    const t = s - now;
-    el.textContent = `${Math.floor(t / 864e5)}d ${p(Math.floor(t / 36e5) % 24)}h ${p(Math.floor(t / 6e4) % 60)}m ${p(Math.floor(t / 1e3) % 60)}s to go`;
+    if (now < s) { box.className = 'countdown'; label.textContent = 'Doors open in'; show(s - now); }
+    else if (now < e) { box.className = 'countdown live'; label.textContent = 'Live now, party ends in'; show(e - now); }
+    else { box.className = 'countdown over'; label.textContent = 'That was the night. See you next Halloween.'; }
   };
   tick(); setInterval(tick, 1000);
 })();
