@@ -248,8 +248,8 @@ if (renderer) {
     starMat.uniforms.uPx.value = dpr;
 
     // moon: pixel radius → world units at z = 0
-    const rPx = THREE.MathUtils.clamp(W * 0.085, 62, 150);
-    const cx = W * 0.5, cy = rPx + Math.max(34, H * 0.06);
+    const rPx = THREE.MathUtils.clamp(W * 0.07, 62, 125);
+    const cx = W * 0.5, cy = rPx + Math.max(34, H * 0.04);
     const p2w = FOV_H / H, rW = rPx * p2w;
     moon.scale.setScalar(rW);
     moon.position.set((cx - W / 2) * p2w, (H / 2 - cy) * p2w, 0);

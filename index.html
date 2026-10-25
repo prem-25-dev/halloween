@@ -58,7 +58,7 @@ h1::after{color:#00e5ff;text-shadow:none;animation:glitch2 5s infinite steps(1);
 .facts span{padding:0 18px;border-left:1px solid var(--line)}
 .facts span:first-child{border:0}
 @media (max-width:560px){.facts{flex-direction:column;gap:2px}.facts span{border:0;padding:0}}
-.countdown{margin:22px 0 4px}
+.countdown{margin:22px 0 30px}
 .cd-label{font-family:var(--serif);letter-spacing:.32em;text-transform:uppercase;font-size:.78rem;color:var(--amber);margin-bottom:12px}
 .cd-tiles{display:flex;justify-content:center;gap:10px}
 .cd-tile{position:relative;overflow:hidden;min-width:76px;padding:13px 8px 10px;border-radius:16px;text-align:center;
@@ -293,7 +293,7 @@ dialog::backdrop{background:rgba(3,1,8,.85);backdrop-filter:blur(4px)}
       </div>
     </div>
     <div class="venom-cta"><iframe src="venom.html" title="Get your pass" allowtransparency="true"></iframe></div>
-    <div class="cta-row" style="margin-top:0">
+    <div class="cta-row" style="margin-top:6px">
       <a class="btn btn-ghost" href="#details">What's included</a>
     </div>
   </div>
@@ -499,7 +499,7 @@ const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* touch phones: swap the heavy venom canvas for the slab button so scrolling stays smooth */
 if (matchMedia('(pointer: coarse)').matches) {
-  document.querySelector('.venom-cta').outerHTML = '<div class="cta-row" style="margin:6px 0 14px"><button class="btn btn-primary" data-open-form>Get your pass</button></div>';
+  document.querySelector('.venom-cta').outerHTML = '<div class="cta-row" style="margin:0 0 18px"><button class="btn btn-primary" data-open-form>Get your pass</button></div>';
 }
 
 
